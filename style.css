@@ -1,0 +1,246 @@
+#calcopen {
+    display: flex;
+    justify-content: center;
+}
+
+#calcopen:hover {
+    cursor: pointer;
+}
+
+#calc {
+    margin-top: 0;
+    font-size: 13px;
+}
+
+#calc-img {
+    padding-left: 5px;
+}
+
+/* -------------------------- */
+
+#parent-popup {
+    background: rgba(117, 117, 117, 0.651);
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-transition: .6s ease;
+    -webkit-transition: .6s ease;
+    -o-transition: .6s ease;
+    transition: .6s ease;
+    font-family: 'Lato', sans-serif;
+    text-align: 1.6;
+    font-size: 14px;
+    /* visibility: hidden;
+    opacity: 0; */
+}
+
+.popup-cont {
+    position: relative;
+    background-color: white;
+    padding: 20px 40px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+}
+
+#popup-close {
+    position: absolute;
+    background-image: url(img/ico-close.png);
+    width: 30px;
+    height: 30px;
+    top: -34px;
+    left: 100%;
+    cursor: pointer;
+}
+
+#calc-title {
+    font-size: 1.29em;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* ---------------------- */
+#tabs-calc {
+    width: 560px;
+    -moz-transition: width 1s ease;
+    -webkit-transition: width 1s ease;
+    -o-transition: width 1s ease;
+    transition: width 1s ease;
+}
+
+.item-row, .figure-types {
+    display: flex;
+    align-items: center;
+}
+
+.item-row {
+    justify-content: space-between;
+    margin: 20px 0;
+    align-items: baseline;
+}
+
+
+.left-column {
+    width: 20%;
+    padding-right: 5px;
+}
+
+.right-column {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-ico-block {
+    margin-right: 50px;
+    padding: 10px;
+}
+
+.img-ico-block:hover {
+    cursor: pointer;
+    background-color: rgb(231, 231, 231);
+}
+
+.type-checked {
+    background-color: rgb(231, 231, 231);
+}
+ #calc-mat-cont {
+    width: 100%;
+}
+
+#calc-mat {
+    padding: 6px 10px;
+    background-image: url(img/arr-down.png);
+    background-repeat: no-repeat;
+    background-position: 98% center;
+    border: 1px solid #e1e1e1;
+    width: 100%;
+}
+
+#calc-mat-cont .options-field {
+    width: 100%!important;
+}
+
+.select-field {
+    padding: 10px!important;
+    background-image: url(img/arr-down.png);
+    background-repeat: no-repeat;
+    background-position: 98% center;
+    border: 1px solid #e1e1e1;
+    width: 293px;
+    height: 15px;
+    background-color: white;
+    overflow: hidden;
+}
+
+
+.select-cont {
+    position: relative;
+    width: 293px;
+}
+
+.select-field:hover {
+    cursor: pointer;
+}
+
+.options-field {
+    position: absolute;
+    top: 45px;
+    display: none;
+    background-color: white;
+    padding: 5px 8px;
+    width: 102%;
+    max-height: 150px;
+    overflow-y: auto;
+    -webkit-box-shadow: -1px 3px 26px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 3px 26px -3px rgba(0,0,0,0.75);
+    box-shadow: -1px 3px 26px -3px rgba(0,0,0,0.75);
+    z-index: 999;
+}
+
+.options-field > p:hover {
+    cursor: pointer;
+    color: rgb(255, 200, 50);
+}
+
+.options-field > p {
+    margin: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.option-checked {
+    color: rgb(255, 200, 50);
+}
+ /* ------------------------ */
+ .size-parameters {
+     /* width: 80px; */
+     display: flex;
+     align-items: center;
+     padding-right: 5px;
+ }
+
+ .size-parameters > input {
+     width: 45px;
+     padding: 10px;
+    border: 1px solid #e1e1e1;
+    margin-right: 5px;
+    outline: none;
+ }
+
+ .size-parameters > input:focus {
+     border: 1px solid rgb(255, 200, 50);
+ }
+
+ .step-parameters {
+     padding-left: 33px;
+     display: none;
+ }
+
+ .calc-step-cont {
+     width: 50px;
+ }
+
+ .calc-step-cont > .select-field {
+     width: 50px;
+     background-position: 90% center;
+ }
+
+ .step-title {
+     padding-right: 5px;
+ }
+
+ #step-l, #step-w {
+     width: 40px;
+ }
+
+/* buuton style */
+.btn-block {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-item {
+    font-size: 20px;
+    color: white;
+    background-color: #3e77aa;
+    border: none;
+    padding: 5px 30px;
+    border-radius: 3px;
+    outline: none;
+}
+
+.btn-item:hover {
+    background-color: #6d9bc4;
+    cursor: pointer;
+}
+
+/*-----------------------*/
+#height-row, #diameter-row {
+    display: none;
+}
