@@ -20,8 +20,8 @@
 
 #parent-popup {
     background: rgba(117, 117, 117, 0.651);
-    height: 100%;
-    position: fixed;
+    min-height: 100%;
+    position: absolute;
     width: 100%;
     z-index: 100;
     top: 0;
@@ -36,6 +36,7 @@
     font-family: 'Lato', sans-serif;
     text-align: 1.6;
     font-size: 14px;
+    visibility: hidden;
     /* visibility: hidden;
     opacity: 0; */
 }
@@ -46,6 +47,8 @@
     padding: 20px 40px;
     padding-left: 30px;
     padding-bottom: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 #popup-close {
@@ -67,10 +70,11 @@
 /* ---------------------- */
 #tabs-calc {
     width: 560px;
-    -moz-transition: width 1s ease;
-    -webkit-transition: width 1s ease;
-    -o-transition: width 1s ease;
-    transition: width 1s ease;
+    height: 420px;
+    -moz-transition: 1s ease;
+    -webkit-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
 }
 
 .item-row, .figure-types {
@@ -191,6 +195,7 @@
     border: 1px solid #e1e1e1;
     margin-right: 5px;
     outline: none;
+    text-align: center;
  }
 
  .size-parameters > input:focus {
@@ -242,5 +247,24 @@
 
 /*-----------------------*/
 #height-row, #diameter-row {
+    display: none;
+}
+
+.note-cont, #note-field {
+    width: 100%;
+}
+
+#note-field {
+    height: 70px;
+    padding: 10px;
+    border: 1px solid #e1e1e1;
+    outline: none;   
+}
+
+#note-field:focus {
+    border: 1px solid rgb(255, 200, 50);
+}
+
+.hidden-fields {
     display: none;
 }

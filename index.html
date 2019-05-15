@@ -86,7 +86,7 @@
                         <div class="left-column">Длина(высота):</p></div>
                         <div class="right-column">
                             <div class="size-parameters">
-                                <input type="text" id="length-size" />
+                                <input type="text" class="data-field count-show" id="length-size" />
                                 <span class="math-type">м.</span>
                             </div>
                             <div class="select-cont" id="calc-luv-cont-l">
@@ -100,7 +100,7 @@
 
                             <div class="size-parameters step-parameters">
                                 <span class="step-title">шаг</span>
-                                <input type="text" id="step-l" />
+                                <input type="text" class="data-field" id="step-l" />
                                 <div class="select-cont calc-step-cont">
                                     <div class="select-field" id="calc-step-l">см.</div>
                                     <div class="options-field">
@@ -117,7 +117,7 @@
                         <div class="left-column">Ширина:</p></div>
                         <div class="right-column">
                             <div class="size-parameters">
-                                <input type="text" id="width-size" />
+                                <input type="text" class="data-field count-show" id="width-size" />
                                 <span class="math-type">м.</span>
                             </div>
                             <div class="select-cont" id="calc-luv-cont-w">
@@ -131,7 +131,7 @@
 
                             <div class="size-parameters step-parameters">
                                 <span class="step-title">шаг</span>
-                                <input type="text" id="step-w" />
+                                <input type="text" class="data-field" id="step-w" />
                                 <div class="select-cont calc-step-cont">
                                     <div class="select-field" id="calc-step-w">см.</div>
                                     <div class="options-field">
@@ -148,7 +148,7 @@
                         <div class="left-column">Высота:</div>
                         <div class="right-column">
                             <div class="size-parameters">
-                                <input type="text" id="height-size" />
+                                <input type="text" class="data-field" id="height-size" />
                                 <span class="math-type">м.</span>
                             </div>
                         </div>
@@ -158,7 +158,7 @@
                         <div class="left-column">Диаметр:</div>
                         <div class="right-column">
                             <div class="size-parameters">
-                                <input type="text" id="diameter-size" />
+                                <input type="text" class="data-field" id="diameter-size" />
                                 <span class="math-type">м.</span>
                             </div>
                         </div>
@@ -168,14 +168,33 @@
                         <div class="left-column">Стальной трос:</p></div>
                         <div class="right-column">
                             <div class="size-parameters">
-                                <input type="text" id="calc-tros" />
+                                <input type="text" class="data-field" id="calc-tros" />
                                 <span class="math-type">м.</span>
                             </div>
                         </div>
                     </div>
 
+                    <div class="item-row hidden-fields">
+                        <div class="left-column">Количество:</p></div>
+                        <div class="right-column">
+                            <div class="size-parameters">
+                                <input type="text" class="data-field" id="count-size" value="1"/>
+                                <span class="math-type">шт.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item-row hidden-fields">
+                        <div class="left-column">Примечание:</p></div>
+                        <div class="right-column">
+                            <div class="size-parameters note-cont">
+                                <textarea id="note-field"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="btn-block">
-                        <button class="btn-item">Узнать цену</button>
+                        <button class="btn-item" id="get-price">Узнать цену</button>
                     </div>
 
                 </div>
