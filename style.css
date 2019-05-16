@@ -36,7 +36,6 @@
     font-family: 'Lato', sans-serif;
     text-align: 1.6;
     font-size: 14px;
-    visibility: hidden;
     /* visibility: hidden;
     opacity: 0; */
 }
@@ -267,4 +266,74 @@
 
 .hidden-fields {
     display: none;
+}
+
+/* form style*/
+#form-cont {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#form-popup {
+    width: 450px;
+    height: 300px;
+    border-radius: 10px;
+    position: relative;
+    -webkit-box-shadow: 0px 2px 22px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 22px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 22px 0px rgba(0,0,0,0.75);
+    will-change: transform; 
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+    background-image: linear-gradient(45deg, rgb(0, 78, 138) 0%, rgb(0, 175, 173) 100%);     
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+    padding-left: 10px;
+}
+
+.form-btn {
+    border: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    background-color: white;
+    color: rgb(0, 78, 138);
+    outline: none;
+    position: absolute;
+    top: 85%;
+    font-size: 16px;
+}
+
+.form-btn:hover {
+    cursor: pointer;
+    background-color: #074881;
+    color: white;
+}
+
+#form-send {
+    left: 75%;
+}
+
+#form-close {
+    left: 55%;
+}
+
+.contact-input {
+    width: 300px;
+    height: 20px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+#user-comment {
+    height: 60px;
 }

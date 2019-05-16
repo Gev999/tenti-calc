@@ -244,31 +244,6 @@ window.addEventListener('load', ()=> {
 
     // -------------------------------------------------------------------
 
-    //get price information
-    const priceBtn = document.getElementById('get-price');
-    priceBtn.addEventListener('click', ()=> {
-        const squarChecked = isChecked(square);
-        const cubeChecked = isChecked(cube);
-        const cylinderChecked = isChecked(cylinder);
-
-        const lengthSize = document.getElementById('length-size');
-        const widthSize = document.getElementById('width-size');
-        const trosSize = document.getElementById('calc-tros');
-        const heightSize = document.getElementById('height-size');
-        const diameterSize = document.getElementById('diameter-size');
-        const lStepSize = document.getElementById('step-l');
-        const wStepSize = document.getElementById('step-w');
-        
-        confirm('Не готово ещё!!')
-
-    })
-
-    function isChecked(figure) {
-        return figure.classList.contains('type-checked');
-    }
-
-    // ----------------------------------------------------------
-
     //show hidden fields
     if (document.getElementsByClassName('img-ico-block')[0].classList.contains('type-checked')) {
         checkFields(document.getElementsByClassName('count-show'));
@@ -335,7 +310,6 @@ window.addEventListener('load', ()=> {
     function checkEmpties(fields) {
         let allOk = true;
         for (let j = 0; j < fields.length; j++) {
-            console.log(fields[j].value);
             if (fields[j].value=='') {
                 allOk = false;
                 break;
@@ -357,9 +331,96 @@ window.addEventListener('load', ()=> {
 
     //----------------------------------------------------------------------
 
-})
+     //get price information
+     let dataMsg = '';
+     const priceBtn = document.getElementById('get-price');
+     priceBtn.addEventListener('click', ()=> {
+         const sizeElems = document.getElementsByClassName('count-show');
+         let isOk = true;
+         for (let i = 0; i < sizeElems.length; i++) {
+             if (sizeElems[i].value=='') {
+                 isOk = false;
+                 break;
+             }
+         }
+         if (!isOk) {
+            confirm('Пожалуйста укажите размеры');
+         }
+         else if (document.getElementById('count-size').value=='') {
+             confirm('Пожалуйста укажите количество');
+         }
+         else {
+             dataMsg = createMsg();
+             console.log(dataMsg);
+             document.getElementById('form-cont').style.display = 'flex';
+             document.getElementById('popup-close').style.display = 'none';
+         }
+ 
+     })
+ 
+     function createMsg() {
+        let msg = 'Тип: ';
+        const elems = [document.getElementsByClassName('img-ico-block')[0], document.getElementsByClassName('img-ico-block')[1], document.getElementsByClassName('img-ico-block')[2]];
+        if (elems[0].classList.contains('type-checked')) {
+            msg += 'квадрат';
+        }
+        else if (elems[1].classList.contains('type-checked')) {
+            msg += 'куб';
+        }
+        else {
+            msg += 'цилиндр';
+        }
+        msg += '\nМатериал: ' + document.getElementById('calc-mat').innerHTML;
+        if (elems[0].classList.contains('type-checked') || elems[1].classList.contains('type-checked')) {
+            msg += '\nДлина: ' + document.getElementById('length-size').value + 'м.';
+            msg += '\nШирина: ' + document.getElementById('width-size').value + 'м.';
+        }
 
-// const luvLength = document.getElementById('calc-luv-l');
-// const luvWidth = document.getElementById('calc-luv-w')
+        if (elems[0].classList.contains('type-checked')) {
+            msg += '\n' + document.getElementById('calc-luv-l').innerHTML;
+            if (document.getElementById('calc-luv-l').innerHTML != 'без люверсов по длине') {
+                if (document.getElementById('step-l').value!='') {
+                    msg += '\tшаг: ' + document.getElementById('step-l').value + document.getElementById('calc-step-l').innerHTML;
+                }
+            }
+            msg += ',\t' + document.getElementById('calc-luv-w').innerHTML;
+            if (document.getElementById('calc-luv-w').innerHTML != 'без люверсов по ширине') {
+                if (document.getElementById('step-w').value!='') {
+                    msg += '\tшаг: ' + document.getElementById('step-w').value + document.getElementById('calc-step-w').innerHTML;
+                }
+            }
+        }
+
+        if (elems[1].classList.contains('type-checked') || elems[2].classList.contains('type-checked')) {
+            msg += '\nВысота: ' + document.getElementById('height-size').value + 'м.';
+        }
+
+        if (elems[2].classList.contains('type-checked')) {
+            msg += '\nДиаметр: ' + document.getElementById('diameter-size').value + 'м.';
+        }
+
+        if (document.getElementById('calc-tros').value!='') {
+            msg += '\nСтальной трос: ' + document.getElementById('calc-tros').value + 'м.';
+        }
+        msg += '\nКоличество: ' + document.getElementById('count-size').value + 'шт.';
+        if (document.getElementById('note-field').value.trim()!='') {
+            msg+= '\n\nПримечание: ' + document.getElementById('note-field').value.trim();
+        }
+        msg += '\n';
+        return msg;
+     }
+
+     //--------------------------------------------------------------------------------------------
+
+     //form buttons logic
+
+     document.getElementById('form-close').addEventListener('click', ()=> {
+        document.getElementById('form-cont').style.display = 'none';
+        document.getElementById('popup-close').style.display = 'block';
+     })
+
+     //--------------------------------------------------------------------------------------------
+
+})
 
 

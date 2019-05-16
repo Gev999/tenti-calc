@@ -200,8 +200,32 @@
                 </div>
 
             </div>
+            <div id="form-cont">
+                <div id="form-popup">
+                    <form id="contact-from" method="POST" action="#" autocomplete="off">
+                        <input type="text" name="user_name" class="contact-input" placeholder="Имя" />
+                        <br />
+                        <input type="email" name="user_mail" id="user-mail" class="contact-input" placeholder="Email"/>
+                        <br />
+                        <input type="tel" name="user_tel" id="user-tel" class="contact-input" placeholder="Номер телефона" />
+                        <br />
+                        <textarea name="user_comment" id="user-comment" class="contact-input" placeholder="Комментарий"></textarea>
+                        <input id="form-send" type="submit" class="form-btn" value="Отправить">
+                    </form>
+                    <button id="form-close" class="form-btn">Отмена</button>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- <div id="form-parent-popup">
+        <div id="form-popup">
+            <div id="form-close"></div>
+            <div id="form-popup-inner">
+
+            </div>
+        </div>
+    </div> -->
 
     <script src="script.js"></script>
 </body>
