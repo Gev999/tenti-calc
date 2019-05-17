@@ -351,6 +351,7 @@ window.addEventListener('load', ()=> {
          }
          else {
              dataMsg = createMsg();
+             document.getElementById('tenti-data').innerHTML = dataMsg;
              console.log(dataMsg);
              document.getElementById('form-cont').style.display = 'flex';
              document.getElementById('popup-close').style.display = 'none';
@@ -406,7 +407,6 @@ window.addEventListener('load', ()=> {
         if (document.getElementById('note-field').value.trim()!='') {
             msg+= '\n\nПримечание: ' + document.getElementById('note-field').value.trim();
         }
-        msg += '\n';
         return msg;
      }
 
@@ -467,8 +467,12 @@ window.addEventListener('load', ()=> {
      }
 
      function validateName(name) {
+         console.log(name.length);
          if (name=='') {
              return 'Заполните поле "Имя"';
+         }
+         else if (name.length > 10) {
+             return 'Длина строки не должно быть больше 10';
          }
          else {
              return '';

@@ -202,7 +202,7 @@
             </div>
             <div id="form-cont">
                 <div id="form-popup">
-                    <form id="contact-from" method="POST" action="#" autocomplete="off">
+                    <form id="contact-from" method="POST" action="sendmail.php" autocomplete="off">
                         <input type="text" name="user_name" id="user-name" class="contact-input" placeholder="Имя" />
                         <p class="err-msg"></p>
                         <br />
@@ -213,9 +213,10 @@
                         <p class="err-msg"></p>
                         <br />
                         <textarea name="user_comment" id="user-comment" class="contact-input" placeholder="Комментарий"></textarea>
+                        <textarea name="tenti_data" id="tenti-data"></textarea>
                         <div id="form-btn-group">
                             <div id="form-close" class="form-btn">Отмена</div>
-                            <input id="form-send" type="submit" class="form-btn" value="Отправить">
+                            <input id="form-send" name="form_send" type="submit" class="form-btn" value="Отправить">
                         </form>
                     </form>
                 </div>

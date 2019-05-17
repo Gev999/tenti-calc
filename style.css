@@ -351,3 +351,7 @@
     text-align: center;
     color: white;
 }
+
+#tenti-data {
+    display: none;
+}
