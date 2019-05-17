@@ -414,10 +414,94 @@ window.addEventListener('load', ()=> {
 
      //form buttons logic
 
-     document.getElementById('form-close').addEventListener('click', ()=> {
+     document.getElementById('form-close').addEventListener('click', (e)=> {
         document.getElementById('form-cont').style.display = 'none';
         document.getElementById('popup-close').style.display = 'block';
+        resetValues();
+     });
+
+     function resetValues() {
+        document.getElementById('user-name').value = '';
+        document.getElementById('user-mail').value = '';
+        document.getElementById('user-tel').value = '';
+        document.getElementById('user-comment').value = '';
+        for (let i = 0; i < 3; i++) {
+            document.getElementsByClassName('err-msg')[i].style.display = 'none';
+            if (document.getElementsByClassName('contact-input')[i].classList.contains('error-field')) {
+                document.getElementsByClassName('contact-input')[i].classList.remove('error-field')
+            }
+        }
+     }
+
+     document.getElementById('form-send').addEventListener('click', (e)=>{
+
+        const nameErr = validateName(document.getElementById('user-name').value.trim());
+        const mailErr = validateMail(document.getElementById('user-mail').value.trim());
+        const phoneErr = validatePhone(document.getElementById('user-tel').value.trim())
+
+        validate(nameErr, 'user-name', 0);
+        validate(mailErr, 'user-mail', 1);
+        validate(phoneErr, 'user-tel', 2);
+
+        if (nameErr!='' || mailErr!=''|| phoneErr!='') {
+            e.preventDefault();
+        }
+        
      })
+
+     function validate(err, id, idx) {
+        if (err=='') {
+            if (document.getElementById(id).classList.contains('error-field')) {
+                document.getElementById(id).classList.remove('error-field');
+            }
+            document.getElementsByClassName('err-msg')[idx].style.display = 'none';
+        }
+        else {
+            if (!document.getElementById(id).classList.contains('error-field')) {
+                document.getElementById(id).classList.add('error-field');
+            }
+            document.getElementsByClassName('err-msg')[idx].style.display = 'block';
+            document.getElementsByClassName('err-msg')[idx].innerHTML  = err;
+        }
+       
+     }
+
+     function validateName(name) {
+         if (name=='') {
+             return 'Заполните поле "Имя"';
+         }
+         else {
+             return '';
+         }
+     }
+
+     function validateMail(mail) {
+         const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+         if (mail=='') {
+             return 'Заполните поле "Email"';
+         }
+         else if (!mail.match(mailformat)) {
+             return 'Вы ввели неверный адрес электронной почты';
+         }
+         else {
+             return '';
+         }
+     }
+
+     function validatePhone(phone) {
+        const regex = /^\+(?:[0-9] ?){6,14}[0-9]$/;
+
+        if (phone=='') {
+            return 'Заполните поле "Номер телефона"'
+        }
+
+        if (!regex.test(phone)) {
+            return 'Вы ввели неверный номер телефона<br />Формат: +"номер телефона"'
+        } 
+        else {
+            return '';
+        }
+     }
 
      //--------------------------------------------------------------------------------------------
 

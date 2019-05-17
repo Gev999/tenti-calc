@@ -282,7 +282,7 @@
 
 #form-popup {
     width: 450px;
-    height: 300px;
+    min-height: 280px;
     border-radius: 10px;
     position: relative;
     -webkit-box-shadow: 0px 2px 22px 0px rgba(0,0,0,0.75);
@@ -294,7 +294,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-bottom: 15px;
     padding-left: 10px;
 }
 
@@ -305,8 +306,8 @@
     background-color: white;
     color: rgb(0, 78, 138);
     outline: none;
-    position: absolute;
-    top: 85%;
+    /* position: absolute; */
+    /* top: 85%; */
     font-size: 16px;
 }
 
@@ -316,13 +317,15 @@
     color: white;
 }
 
-#form-send {
-    left: 75%;
+#form-btn-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 115%;
 }
 
 #form-close {
-    left: 55%;
-}
+    margin-right: 10px;
+} 
 
 .contact-input {
     width: 300px;
@@ -336,4 +339,15 @@
 
 #user-comment {
     height: 60px;
+}
+
+.error-field {
+    border: 2px solid red;
+}
+
+.err-msg {
+    display: none;
+    margin: 0;
+    text-align: center;
+    color: white;
 }
