@@ -26,7 +26,6 @@
     z-index: 100;
     top: 0;
     left: 0;
-    display: flex;
     justify-content: center;
     align-items: center;
     -moz-transition: .6s ease;
@@ -36,6 +35,7 @@
     font-family: 'Lato', sans-serif;
     text-align: 1.6;
     font-size: 14px;
+    display: none;
     visibility: hidden;
 }
 
