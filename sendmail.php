@@ -28,12 +28,10 @@ if (isset($_POST['form_send'])) {
         $headers = "From: $mail";
 
         $result = mail($to,$subject,$msg,$headers);
-        var_dump($result);
-        echo $_SERVER['HTTP_HOST'];
-        
+        //var_dump($result);        
     }
 }
-//header("Location: index.php");
+header("Location: https://$_SERVER['HTTP_HOST']");
 
 function isEmpty($data) {
     return ($data=='');
