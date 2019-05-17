@@ -35,7 +35,7 @@
     font-family: 'Lato', sans-serif;
     text-align: 1.6;
     font-size: 14px;
-    display: none;
+    display: flex;
     visibility: hidden;
 }
 
