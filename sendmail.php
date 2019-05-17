@@ -29,6 +29,7 @@ if (isset($_POST['form_send'])) {
 
         $result = mail($to,$subject,$msg,$headers);
         var_dump($result);
+        echo $_SERVER['HTTP_HOST'];
         
     }
 }
