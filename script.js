@@ -23,6 +23,9 @@ window.addEventListener('load', ()=> {
     calcopen.addEventListener('click', ()=> {
         popupParent.style.visibility = 'visible';
         popupParent.style.opacity = 1;
+        if (!popupParent.classList.contains('trans-property')) {
+            popupParent.classList.add('trans-property')
+        }
         //popupParent.style.display = 'flex';
     });
 
