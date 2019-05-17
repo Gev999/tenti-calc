@@ -21,9 +21,11 @@ window.addEventListener('load', ()=> {
     }
 
     calcopen.addEventListener('click', ()=> {
+        setTimeout(()=> {
+            popupParent.style.display = 'flex';
+        }, 600);
         popupParent.style.visibility = 'visible';
         popupParent.style.opacity = 1;
-        popupParent.style.display = 'flex';
     });
 
     for (let i = 0; i < 3; i++) {
