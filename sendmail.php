@@ -27,12 +27,12 @@ if (isset($_POST['form_send'])) {
         $subject = 'Данные про тенти для вычесление цени';
         $headers = "From: $mail";
 
-        mail($to,$subject,$msg,$headers);
-
-        //header("Location: index.php");
+        $result = mail($to,$subject,$msg,$headers);
+        var_dump($result);
+        
     }
 }
-header("Location: index.php");
+//header("Location: index.php");
 
 function isEmpty($data) {
     return ($data=='');
