@@ -31,7 +31,7 @@ if (isset($_POST['form_send'])) {
         //var_dump($result);        
     }
 }
-header("Location: https://$_SERVER['HTTP_HOST']");
+header("Location: https://".$_SERVER['HTTP_HOST']);
 
 function isEmpty($data) {
     return ($data=='');
