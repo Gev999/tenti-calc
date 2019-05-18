@@ -227,23 +227,28 @@ window.addEventListener('load', ()=> {
         })
     }
 
+
     function checkData(data, e) {
         let dataLength = e.target.value.length;
-        let str = e.target.value;
-        let symbol = str.substr(dataLength - 1);
-        if (dataLength == 1) {
-            if (symbol.charCodeAt(0) < 49 || symbol.charCodeAt(0) > 57) {
-                data.value= str.substr(0, dataLength - 1);
-            }
-        }
-        else {
-            if (symbol.charCodeAt(0) < 48 || symbol.charCodeAt(0) > 57) {
-                data.value= str.substr(0, dataLength - 1);
-            }
-        }
-        if (data.value > 1000) {
+        // let str = e.target.value;
+        if (isNaN(data.value) || data.value > 1000) {
             data.value = data.value.substr(0, dataLength - 1);
         }
+        // let symbol = str.substr(dataLength - 1);
+        // if (dataLength == 1) {
+        //     if (symbol.charCodeAt(0) < 49 || symbol.charCodeAt(0) > 57) {
+        //         data.value= str.substr(0, dataLength - 1);
+        //     }
+        // }
+        // else {
+        //     if (symbol.charCodeAt(0) < 48 || symbol.charCodeAt(0) > 57) {
+        //         data.value= str.substr(0, dataLength - 1);
+        //     }
+        // }
+        // if (data.value > 1000) {
+        //     data.value = data.value.substr(0, dataLength - 1);
+        // }
+        
     }
 
     // -------------------------------------------------------------------
@@ -295,7 +300,7 @@ window.addEventListener('load', ()=> {
             fields[i].addEventListener('keyup', ()=> {
                 let allOk = true;
                 for (let j = 0; j < fields.length; j++) {
-                    if (fields[j].value=='') {
+                    if (fields[j].value=='' || fields[j].value==0) {
                         allOk = false;
                         break;
                     }
@@ -314,7 +319,7 @@ window.addEventListener('load', ()=> {
     function checkEmpties(fields) {
         let allOk = true;
         for (let j = 0; j < fields.length; j++) {
-            if (fields[j].value=='') {
+            if (fields[j].value=='' || fields[j].value==0) {
                 allOk = false;
                 break;
             }
@@ -342,7 +347,7 @@ window.addEventListener('load', ()=> {
          const sizeElems = document.getElementsByClassName('count-show');
          let isOk = true;
          for (let i = 0; i < sizeElems.length; i++) {
-             if (sizeElems[i].value=='') {
+             if (sizeElems[i].value=='' || sizeElems[i].value==0) {
                  isOk = false;
                  break;
              }
