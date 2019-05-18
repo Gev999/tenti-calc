@@ -234,6 +234,9 @@ window.addEventListener('load', ()=> {
         if (isNaN(data.value) || data.value > 1000) {
             data.value = data.value.substr(0, dataLength - 1);
         }
+        if (e.target.id=='count-size' && data.value!='') {
+            data.value = parseInt(data.value);
+        }
         // let symbol = str.substr(dataLength - 1);
         // if (dataLength == 1) {
         //     if (symbol.charCodeAt(0) < 49 || symbol.charCodeAt(0) > 57) {
