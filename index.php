@@ -15,21 +15,6 @@ session_start(); ?>
 
 <body>
 
-    <?php 
-    if (isset($_SESSION['result'])) {
-        if ($_SESSION['result']) { ?>
-            <script>
-                confirm('Ваше сообщение доставлено');
-            </script>
-        <?php }
-        if (!$_SESSION['result']) {?>
-            <script>
-                confirm('Что то пошло не так. Ваше сообщение не доставлено');
-            </script>
-        <?php }
-        unset($_SESSION['result']);
-    }?>
-
     <div id="calcopen">
         <div>
             <img src="img/calc1.png" id="calc-img"/>
@@ -241,8 +226,24 @@ session_start(); ?>
                 </div>
             </div>
         </div>
+
+        <?php 
+        if (isset($_SESSION['result'])) {
+            if ($_SESSION['result']) { ?>
+                <script>
+                    confirm('Ваше сообщение доставлено');
+                </script>
+            <?php }
+            if (!$_SESSION['result']) {?>
+                <script>
+                    confirm('Что то пошло не так. Ваше сообщение не доставлено');
+                </script>
+            <?php }
+            unset($_SESSION['result']);
+        }?>
+
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 
