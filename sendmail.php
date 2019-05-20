@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 if (isset($_POST['form_send'])) {
     $name = htmlentities(trim($_POST['user_name']));
@@ -28,7 +29,8 @@ if (isset($_POST['form_send'])) {
         $headers = "From: $mail";
 
         $result = mail($to,$subject,$msg,$headers);
-        //var_dump($result);        
+        //var_dump($result);  
+        $_SESSION['result'] = $result;
     }
 }
 header("Location: https://".$_SERVER['HTTP_HOST']);
