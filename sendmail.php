@@ -33,7 +33,8 @@ if (isset($_POST['form_send'])) {
         $_SESSION['result'] = $result;
     }
 }
-header("Location: https://".$_SERVER['HTTP_HOST']);
+//header("Location: https://".$_SERVER['HTTP_HOST']);
+header("Location: ". $_SESSION['return_url']);
 
 function isEmpty($data) {
     return ($data=='');
