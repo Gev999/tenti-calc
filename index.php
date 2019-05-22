@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['return_url'] = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$_SESSION['return_url'] = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
 ?>
 
